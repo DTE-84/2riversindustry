@@ -106,9 +106,12 @@
     "peerDependencyRules": {
       "ignoreMissing": [
         "@swc/core",
-        "esbuild"
+        "esbuild",
+        "react",
+        "react-dom"
       ]
     },
+
     "onlyBuiltDependencies": [
       "@swc/core",
       "esbuild"
