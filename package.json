@@ -102,19 +102,11 @@
       "dist/server/**/*.js"
     ]
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@swc/core",
-        "esbuild",
-        "react",
-        "react-dom"
-      ]
-    },
-
-    "onlyBuiltDependencies": [
-      "@swc/core",
-      "esbuild"
-    ]
-  }
-}
+      "pnpm": {
+        "onlyBuiltDependencies": [
+          "@swc/core",
+          "esbuild"
+        ]
+      }
+    }
+    
