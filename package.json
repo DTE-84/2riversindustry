@@ -101,5 +101,17 @@
     "scripts": [
       "dist/server/**/*.js"
     ]
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@swc/core",
+        "esbuild"
+      ]
+    },
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild"
+    ]
   }
 }
