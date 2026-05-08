@@ -14,6 +14,14 @@ export default {
     },
     extend: {
       colors: {
+        earth: "#2d4a2d",
+        moss: "#4a7c4a",
+        sage: "#7aab6a",
+        cream: "#f5f0e8",
+        rust: "#c4572a",
+        gold: "#d4a017",
+        charcoal: "#1a1f1a",
+        light: "#eef4ee",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,6 +65,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        playfair: ["Playfair Display", "serif"],
+        "dm-sans": ["DM Sans", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
