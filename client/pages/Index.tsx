@@ -237,28 +237,49 @@ export default function Index() {
       {/* Recycling Details */}
       <section id="recycling" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-gray-900">Recycling Accepted Items</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 uppercase tracking-tighter">Accepted Recycling Items</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+              We process a wide range of materials to fund our mission and keep Hannibal green.
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Paper", items: "Newspaper & Office Paper" },
-              { title: "Cardboard", items: "Broken down, flattened boxes & packaging material" },
-              { title: "Books", items: "All kinds - thick, thin, big and small plus magazines" },
-              { title: "Aluminum/Metal Cans", items: "Beverage cans and food cans" },
-              { title: "Electronics", items: "Computers, flat screen TVs, monitors, printers, microwaves, radios, vacuums. NO tube TVs or monitors" },
-              { title: "Plastic", items: "PET #1, HDPE #2 (Natural & Colored), & #5. Help available identifying plastics" },
+              { title: "Paper", items: "Newspaper & Office Paper", img: "paper.webp" },
+              { title: "Cardboard", items: "Flattened boxes & packaging", img: "cardboard.webp" },
+              { title: "Books", items: "Hardback, softback & magazines", img: "books.webp" },
+              { title: "Aluminum", items: "Beverage & food cans", img: "aluminum.webp" },
+              { title: "Electronics", items: "Computers, Flat Screens, Printers", img: "electronics.webp" },
+              { title: "Plastic", items: "PET #1, HDPE #2, & #5", img: "plastic.webp" },
+              { title: "Appliances", items: "Washers, Dryers, Microwaves", img: "appliances.webp" },
+              { title: "Equipment", items: "Mowers, Weed Eaters, Tools", img: "smallequip.webp" },
             ].map((category, i) => (
-              <div key={i} className="border border-gray-200 rounded-lg p-6">
-                <h3 className="font-bold text-lg text-primary mb-2">{category.title}</h3>
-                <p className="text-gray-700">{category.items}</p>
+              <div key={i} className="group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div className="h-40 overflow-hidden">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${category.img}`} 
+                    alt={category.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-primary mb-2 uppercase tracking-tighter">{category.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{category.items}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-blue-50 border-l-4 border-secondary p-6 rounded">
-            <p className="text-gray-700">
-              <strong>Appliances & Equipment:</strong> Washers, dryers, microwaves, small window A/C units, vacuum cleaners, push mowers, riding mowers, and weed eaters accepted. <strong>Please call before bringing.</strong> NO tractors or large equipment.
-            </p>
+          <div className="mt-12 bg-emerald-50 border-l-4 border-primary p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
+              <Phone className="text-primary" size={28} />
+            </div>
+            <div>
+              <p className="text-emerald-900 font-medium text-lg leading-relaxed">
+                <strong>Large Equipment Note:</strong> We accept push mowers, riding mowers, and shop tools. <strong>Please call before bringing large equipment or tractors</strong> so we can ensure we have the capacity to process them safely.
+              </p>
+            </div>
           </div>
         </div>
       </section>

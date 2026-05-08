@@ -154,6 +154,54 @@ export default function CommunityBridge() {
         </div>
       </section>
 
+      {/* Real-Life Work: The Impact in Action */}
+      <section className="py-32 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase">
+                Meaningful Work <br/>
+                <span className="text-emerald-600 italic">In Action.</span>
+              </h2>
+              <p className="text-slate-500 text-lg font-medium">
+                Your donations don't just "fund an office"—they power a high-fidelity recycling facility where local citizens gain real skills and provide vital services to Hannibal.
+              </p>
+            </div>
+            <Link to="/donate" className="flex items-center gap-3 text-emerald-600 font-black uppercase tracking-widest hover:gap-5 transition-all">
+              Join the Workforce Support <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { img: "cardboard.webp", label: "Cardboard Processing" },
+              { img: "electronics.webp", label: "E-Waste Recycling" },
+              { img: "plastic.webp", label: "Plastic Sorting" },
+              { img: "paper.webp", label: "Document Shredding" },
+              { img: "aluminum.webp", label: "Aluminum Collection" },
+              { img: "appliances.webp", label: "Appliance Restoration" },
+              { img: "books.webp", label: "Book Recovery" },
+              { img: "smallequip.webp", label: "Small Equipment" }
+            ].map((work, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -5 }}
+                className="group relative h-48 sm:h-64 rounded-3xl overflow-hidden shadow-sm"
+              >
+                <img 
+                  src={`${import.meta.env.BASE_URL}${work.img}`} 
+                  alt={work.label}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                  <span className="text-white font-black uppercase tracking-tighter text-sm">{work.label}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Truth Section: Refined Depth */}
       <section id="truth" className="py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -267,11 +315,34 @@ export default function CommunityBridge() {
       </section>
 
       {/* Voices Section: Human Connection */}
-      <section className="py-32 bg-slate-50/50">
+      <section className="py-32 bg-slate-50/50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+          <img src={`${import.meta.env.BASE_URL}community.webp`} alt="" className="w-full h-full object-cover grayscale" />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Voices of Two Rivers</h2>
-            <div className="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full" />
+          <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase">
+                Voices of <br/>
+                <span className="text-emerald-600 italic">Two Rivers.</span>
+              </h2>
+              <p className="text-slate-500 text-lg font-medium leading-relaxed">
+                Behind every number and every gap is a real person whose life is changed by this workshop. These are the stories of our neighbors, our friends, and our family.
+              </p>
+            </div>
+            <div className="lg:w-1/2 relative group">
+              <div className="absolute inset-0 bg-emerald-500 rounded-[3rem] rotate-2 opacity-10 group-hover:rotate-1 transition-transform" />
+              <img 
+                src={`${import.meta.env.BASE_URL}community.webp`} 
+                alt="Two Rivers Community" 
+                className="relative z-10 w-full h-80 object-cover rounded-[3rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute bottom-6 right-6 z-20 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 flex items-center gap-2">
+                <Heart className="w-4 h-4 text-rose-500 fill-current" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">Our Team, 2024</span>
+              </div>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-10">
